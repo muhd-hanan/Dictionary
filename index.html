@@ -21,18 +21,18 @@
   }
 </style>
 </head>
-<body class=" w-full min-h-screen  bg-gradient-to-br from-[#f0f9ff] to-[#d2eafb]">
+<body class=" w-full min-h-screen  bg-gradient-to-br from-[#f0f9ff] to-[#d2eafb] pt-5">
     <header class="text-center my-6 ">
            
-           <div class="flex justify-center">
-             <img src="./images/2.svg" alt="img" class=" w-24 my-2">
+           <div class="flex justify-center mt-9">
+             <img src="./images/2.svg" alt="img" class=" w-14 my-2">
            </div>
             
-            <h1 class="text-4xl font-bold   bg-gradient-to-r from-[#0ea5e9] to-[#ec4899] bg-clip-text text-transparent">  Dictionary </h1>
+            <h1 class="text-4xl font-bold block   bg-gradient-to-r from-[#4a3a75] to-[#253d75] bg-clip-text text-transparent">  Dictionary </h1>
             <p class="text-lg text-gray-600 mt-2">Discover the beauty of English words</p>
     </header>
-    <div class="mb-12 animate-slide-up">
-            <div class="relative flex max-w-2xl mx-auto shadow-lg rounded-xl overflow-hidden ">
+    <div class="mb-9 animate-slide-up">
+            <div class="relative flex  max-w-2xl mx-auto shadow-lg rounded-xl overflow-hidden ">
                 <input 
                     type="text" 
                     id="search-input" 
@@ -44,7 +44,7 @@
                 
         
                     id="search-btn" 
-                    class="search-btn text-white pr-8 flex items-center justify-center  bg-gradient-to-r from-blue-500 to-blue-700">    <img src="./images/1.svg" class="w-20" alt="">   search             </button>
+                    class="search-btn text-white px-5  flex items-center justify-center  bg-gradient-to-r from-blue-500 to-blue-700"><img src="./images/1.svg" class="w-5" alt="" > </button>
             </div>
             <p id="error-message" class="text-center text-red-400 mt-3 hidden animate-fade-in"></p>
     </div> 
@@ -62,7 +62,11 @@
 
 
     <div id="empty-state" class="text-center  animate-fade-in">
-            <div class="max-w-md mx-auto mt-32">
+            <div class="max-w-md mx-auto mt-16 mb-5 ">
+                <div class="flex justify-center">
+                    <img src="./images/3.svg" alt="img" class="w-20 mb-3">
+
+                </div>
                 
                 <h3 class="text-2xl font-medium text-gray-700 mb-2">Explore the Dictionary</h3>
                 <p class="text-gray-500 mb-6">Enter a word to discover its meaning, pronunciation, and synonyms</p>
