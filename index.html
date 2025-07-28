@@ -1,126 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>English Dictionary</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
-           
-            
         }
     </style>
     <style>
-  .animate-spin-reverse {
-    animation: spin 1.5s linear infinite reverse;
-  }
-</style>
+        .animate-spin-reverse {
+            animation: spin 1.5s linear infinite reverse;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQWC3K8SS8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QQWC3K8SS8');
+    </script>
 </head>
+
 <body class=" w-full min-h-screen  bg-gradient-to-br from-[#f0f9ff] to-[#d2eafb] pt-5">
     <header class="text-center my-6 ">
-           
-           <div class="flex justify-center mt-9">
-             <img src="./images/2.svg" alt="img" class=" w-20  my-3 pl-1">
-           </div>
-            
-            <h1 class="text-4xl font-bold block   bg-gradient-to-r from-[#4a3a75] to-[#253d75] bg-clip-text text-transparent">  Dictionary </h1>
-            <p class="text-lg text-gray-600 mt-2">Discover the beauty of English words</p>
+
+        <div class="flex justify-center mt-9">
+            <img src="./images/2.svg" alt="img" class=" w-20  my-3 pl-1">
+        </div>
+
+        <h1
+            class="text-4xl font-bold block   bg-gradient-to-r from-[#4a3a75] to-[#253d75] bg-clip-text text-transparent">
+            Dictionary </h1>
+        <p class="text-lg text-gray-600 mt-2">Discover the beauty of English words</p>
     </header>
     <div class="mb-9 animate-slide-up">
-            <div class="relative flex  max-w-2xl  shadow-lg rounded-xl overflow-hidden w-[93%] mx-auto ">
-                <input 
-                    type="text" 
-                    id="search-input" 
-                    placeholder="Search for a word..." 
-                    class="w-full p-5 pr-16 text-sm focus:outline-none focus:ring-2 focus:ring-primary-300 md:text-lg "
-                    autocomplete="off"
-                >
-                <button 
-                
-        
-                    id="search-btn" 
-                    class="search-btn text-white px-5  flex items-center justify-center  bg-gradient-to-r from-blue-500 to-blue-700"><img src="./images/1.svg" class="w-5" alt="" > </button>
-            </div>
-            <p id="error-message" class="text-center text-red-400 mt-3 hidden animate-fade-in"></p>
-    </div> 
-        
+        <div class="relative flex  max-w-2xl  shadow-lg rounded-xl overflow-hidden w-[93%] mx-auto ">
+            <input type="text" id="search-input" placeholder="Search for a word..."
+                class="w-full p-5 pr-16 text-sm focus:outline-none focus:ring-2 focus:ring-primary-300 md:text-lg "
+                autocomplete="off">
+            <button id="search-btn"
+                class="search-btn text-white px-5  flex items-center justify-center  bg-gradient-to-r from-blue-500 to-blue-700"><img
+                    src="./images/1.svg" class="w-5" alt=""> </button>
+        </div>
+        <p id="error-message" class="text-center text-red-400 mt-3 hidden animate-fade-in"></p>
+    </div>
+
     <div class="relative h-16 w-16 mx-auto p-2 hidden">
-            <div class="relative h-12 w-12 mx-auto mb-4">
-                <div class="animate-spin absolute inset-0 rounded-full border-2 border-transparent border-t-indigo-500 border-r-indigo-500"></div>
-                <div class="animate-spin-reverse absolute inset-0 rounded-full border-2 border-transparent border-b-indigo-300 border-l-indigo-300"></div>
+        <div class="relative h-12 w-12 mx-auto mb-4">
+            <div
+                class="animate-spin absolute inset-0 rounded-full border-2 border-transparent border-t-indigo-500 border-r-indigo-500">
             </div>
-        <div class="animate-spin absolute inset-0 rounded-full border-2 border-transparent border-t-indigo-500 border-r-indigo-500"></div>
-        <div class="animate-spin-reverse absolute inset-0 rounded-full border-2 border-transparent border-b-indigo-400 border-l-indigo-400"></div>
+            <div
+                class="animate-spin-reverse absolute inset-0 rounded-full border-2 border-transparent border-b-indigo-300 border-l-indigo-300">
+            </div>
+        </div>
+        <div
+            class="animate-spin absolute inset-0 rounded-full border-2 border-transparent border-t-indigo-500 border-r-indigo-500">
+        </div>
+        <div
+            class="animate-spin-reverse absolute inset-0 rounded-full border-2 border-transparent border-b-indigo-400 border-l-indigo-400">
+        </div>
     </div>
 
     <div class="result max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-md hidden" id="result-container"></div>
 
 
     <div id="empty-state" class="text-center  animate-fade-in">
-            <div class="max-w-md mx-auto mt-16 mb-5 ">
-                <div class="flex justify-center">
-                    <img src="./images/3.svg" alt="img" class="w-20 mb-3">
+        <div class="max-w-md mx-auto mt-16 mb-5 ">
+            <div class="flex justify-center">
+                <img src="./images/3.svg" alt="img" class="w-20 mb-3">
 
-                </div>
-                
-                <h3 class="text-2xl font-medium text-gray-700 mb-2">Explore the Dictionary</h3>
-                <p class="text-gray-500 mb-6">Enter a word to discover its meaning, pronunciation, and synonyms</p>
-                
             </div>
+
+            <h3 class="text-2xl font-medium text-gray-700 mb-2">Explore the Dictionary</h3>
+            <p class="text-gray-500 mb-6">Enter a word to discover its meaning, pronunciation, and synonyms</p>
+
         </div>
-        
+    </div>
 
- <script>
-    const searchBtn = document.getElementById("search-btn");
-const searchInput = document.getElementById("search-input");
-const resultContainer = document.getElementById("result-container");
-const errorMessage = document.getElementById("error-message");
-const loader = document.querySelector(".relative.h-16.w-16.mx-auto.p-2"); // Spinner container
 
-searchBtn.addEventListener("click", async () => {
-    const word = searchInput.value.trim();
-    if (!word) {
-        showError("Please enter a word.");
-        return;
-    }
+    <script>
+        const searchBtn = document.getElementById("search-btn");
+        const searchInput = document.getElementById("search-input");
+        const resultContainer = document.getElementById("result-container");
+        const errorMessage = document.getElementById("error-message");
+        const loader = document.querySelector(".relative.h-16.w-16.mx-auto.p-2"); // Spinner container
 
-    // Clear old results and error
-    errorMessage.classList.add("hidden");
-    resultContainer.classList.add("hidden");
-    resultContainer.innerHTML = "";
+        searchBtn.addEventListener("click", async () => {
+            const word = searchInput.value.trim();
+            if (!word) {
+                showError("Please enter a word.");
+                return;
+            }
 
-    // Show loader animation
-    loader.classList.remove("hidden");
+            // Clear old results and error
+            errorMessage.classList.add("hidden");
+            resultContainer.classList.add("hidden");
+            resultContainer.innerHTML = "";
 
-    try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        await new Promise(resolve => setTimeout(resolve, 1000)); 
+            // Show loader animation
+            loader.classList.remove("hidden");
 
-        if (!res.ok) {
-            throw new Error("Word not found.");
-        }
+            try {
+                const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+                await new Promise(resolve => setTimeout(resolve, 1000));
 
-        const data = await res.json();
-        displayResult(data[0]);
-    } catch (err) {
-        showError("No results found. Please try another word.");
-    } finally {
-        loader.classList.add("hidden");
-    }
-});
+                if (!res.ok) {
+                    throw new Error("Word not found.");
+                }
 
-function displayResult(data) {
-    const { word, phonetics, meanings } = data;
+                const data = await res.json();
+                displayResult(data[0]);
+            } catch (err) {
+                showError("No results found. Please try another word.");
+            } finally {
+                loader.classList.add("hidden");
+            }
+        });
 
-    const audioUrl = phonetics.find(p => p.audio)?.audio || "";
+        function displayResult(data) {
+            const { word, phonetics, meanings } = data;
 
-    const definitions = meanings
-        .map(meaning => `
+            const audioUrl = phonetics.find(p => p.audio)?.audio || "";
+
+            const definitions = meanings
+                .map(meaning => `
             <div class="mb-4">
                 <h3 class="text-lg font-semibold text-indigo-700">${meaning.partOfSpeech}</h3>
                 <ul class="list-disc list-inside text-gray-700">
@@ -128,23 +142,24 @@ function displayResult(data) {
                 </ul>
             </div>
         `)
-        .join("");
+                .join("");
 
-    const resultHTML = `
+            const resultHTML = `
         <h2 class="text-2xl font-bold mb-2 text-blue-700">${word}</h2>
         ${audioUrl ? `<button onclick="new Audio('${audioUrl}').play()" class="bg-blue-200 hover:bg-indigo-200 text-white font-semibold py-2 px-4 rounded mb-4">🔊</button>` : ""}
         ${definitions}
     `;
 
-    resultContainer.innerHTML = resultHTML;
-    resultContainer.classList.remove("hidden");
-}
+            resultContainer.innerHTML = resultHTML;
+            resultContainer.classList.remove("hidden");
+        }
 
-function showError(message) {
-    errorMessage.textContent = message;
-    errorMessage.classList.remove("hidden");
-}
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.remove("hidden");
+        }
 
- </script>
+    </script>
 </body>
+
 </html>
